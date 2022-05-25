@@ -11,26 +11,35 @@ function provider(e) {
     e.preventDefault()
     const apikey = 'ee419c0ff41641efbeb888316eff7b49'
     let topic = inputFrom.value;
-    let url = `https://newsapi.org/v2/everything?q=${topic}&sortBy=popularity&apiKey=${apikey}`
+    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}`
 
     var req = new Request(url);
-    let newsHTML = ''
-    fetch(req)
-        .then(function (response) {
-            return response.json();
-        }).then((data) => {
-            data.articles.forEach((article) => {
-                let news = `<div class="card">
-                                <img src="${article.urlToImage}" alt="news">
-                                <a id="news-title" href="${article.url}"><p class="news-title">${article.title}</p></a>
-                                <p class="news-description">${article.description}.<a id="news-description" href="${article.url}">   Read more...</a></p>
-                            </div>`        
-                newsHTML += news
-            });
-            container1.innerHTML = newsHTML;
-        }).catch((error) => {
-            console.log("error: ");
-            console.log(error);
-        })
+    let news_data = null
+    const getNewsData = async () => {
+
+        await fetch(`${url}`)
+            .then(res => res.json())
+            .then(res => {
+                news_data = res.articles
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        return news_data
     }
 
+    const fetchNews = async () => {
+        const data = await getNewsData()
+        const container = document.getElementById(`${container1}`)
+        const title = `<a id="news-title" href="${data[0].url}"><p class="news-title">${data[0].title}</p></a>`
+        const description = `<p class="news-description">${data[0].description}.<a id="news-description" href="${data[0].url}">   Read more...</a></p>`
+        const imgData = `<img src=${data[0].urlToImage} />`
+        container.innerHTML += `<div class="card">
+                        ${imgData} 
+                        ${title} 
+                        ${description}
+                        </div>`
+
+    }
+    fetchNews()
+}
