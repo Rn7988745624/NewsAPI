@@ -1,0 +1,137 @@
+/* reset css */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+/* nav-bar design */
+#nav-bar{
+    font-family: 'roboto';
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#nav-bar .right{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+/* to make background */
+#nav-bar::before{
+    content: " ";
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(21, 124, 209);
+    height: 100%;
+    width: 100%;
+}
+/* image designing */
+#nav-bar .logo img{
+    width: 70px;
+    border-radius: 100%;
+    padding: 0vh 1vw;
+}
+/* nav links designing */
+#nav-bar ul{
+    display: flex;
+    text-decoration: none;
+}
+#nav-bar ul li{
+    list-style: none;
+}
+#nav-bar ul li a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0px 3vw;
+    color: white;
+    display: block;
+}
+#nav-bar ul li a:hover{
+    transition: ease-in-out;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 2em;
+}
+/* menu-btn */
+#check{ 
+    display: none;
+}
+.checkbtn{
+    display: none;
+}
+/* search area designing */
+#search{
+    position: relative;
+    font-size: 1.7rem;
+    align-items: center;
+    margin: 50px;
+    text-align: center;
+}
+#search .search{
+    display: flex;
+    flex-direction: column;
+}
+#search p{
+    display: inline;
+    width:fit-content;
+    background-color: black;
+    padding: 5px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    color: white;
+}
+#search .search #search-bar{
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 5px;
+}
+#search .search #submit-bar{
+    margin: 10px 20%;
+    color: white;
+    border: 2px solid grey;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 5px;
+    background-color: black;
+}
+#search .search #submit-bar:hover{
+    color: black;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+/* news area */
+.container{
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+#news-accordion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 50px;
+}
+.card img{
+    height: 250px;
+}
+.container a{
+    color: black;
+}
+.container #news-accordion .card #news-title p{
+    font-size: 1.5rem;
+}
+.container #news-accordion .card .news-description #news-description{
+    color: red;
+}

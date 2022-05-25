@@ -1,0 +1,50 @@
+/* reset css */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background-image: url('/images/contact-bg.jpeg');
+    
+}
+
+/* contact form */
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact .welcome-txt{
+    margin: 10px;
+    font-size: 3rem;
+    font-family: 'roboto';
+}
+.contact form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    
+}
+.contact form .form-inside{
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    margin: 5px;
+    border-bottom: 2px solid black;
+    outline: none;
+    font-family: 'roboto';
+}
+form .submit{
+    margin: 10px 0px;
+    background-color: orange;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 1.2rem;
+}
+form .submit:hover{
+    cursor: pointer;
+    background-color: dimgray;
+    color: white;
+}
