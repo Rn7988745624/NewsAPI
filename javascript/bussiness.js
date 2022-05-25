@@ -9,7 +9,7 @@ fetch(req)
     .then(function (response) {
         return response.json();
     }).then((data) => {
-        data.articles.forEach(article => {
+        data.articles.forEach((article) => {
             let news = `<div class="card">
                                 <img src="${article.urlToImage}" alt="news">
                                 <a id="news-title" href="${article.url}"><p class="news-title">${article.title}</p></a>
